@@ -25,7 +25,7 @@ def predict():
     classes = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
     model = keras.models.load_model('CNN')
     image_size = (32, 32)
-    url = "media\{url}".format(url=Image.objects.latest('pk').image)
+    url = "https://karibay-image-classification.herokuapp.com\media\{url}".format(url=Image.objects.latest('pk').image)
 
     img = keras.preprocessing.image.load_img(url, target_size=image_size)
     img_array = keras.preprocessing.image.img_to_array(img)
